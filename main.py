@@ -25,9 +25,31 @@
 
 #<모드가 r이 아니면, print를 못 하나?>
 
-f = open("first.txt", "w", encoding="utf-8")
-look = f.read()
+# f = open("first.txt", "w", encoding="utf-8")
+# look = f.read()
+# print(look)
+# f.close
+# # 오류 : io.UnsupportedOperation: not readable
+# # io : 입출력 / 입출력 중에 할 수 없는 일. 읽기가 안 되는 상태
+
+# # #* -----------------------여기까지  w(x)
+#삭제할 부분만 빼기
+
+f = open("first.txt", "r", encoding="utf-8")
+r_one_line = f.readlines() # 한 줄 씩 읽은걸(가져온걸) / r_one_line(한줄씩 읽는)에 넣겠다.
+
+keep_line = []  #유지할 부분만 고르겠다.
+
+# 여러줄을 검사해야하기 때문에 반복(for) 사용.
+
+look = r_one_line.replace("내용추가","") #일정 부분만 걸러주는 함수(찾을거, 바꿀거)
 print(look)
-f.close
-# 오류 : io.UnsupportedOperation: not readable
-# io : 입출력 / 입출력 중에 할 수 없는 일. 읽기가 안 되는 상태
+close()
+
+# 오류 : AttributeError: 'list' object has no attribute 'replace'
+# replace는 문자열 전용이기 때문에 list에서는 쓸 수 없다.
+
+# for passed_line in r_one_line  # passed_line(전달 라인)에 r_one_line가 있다면 반복.
+# # r_one_line를 한 줄 씩 passed_line에 옮기는데, 다 넘겨서 r_one_line가 비게 된다면 반복 중지
+#     if passed_line != 내용추가
+#     #만약에, passed_line에 "삭제할 부분"이 없다면 keep_line에 추가한다.
