@@ -7,16 +7,27 @@
 
 # f.close()
 
-#* -----------------------여기까지  w "내용 쓰기" 
+# #* -----------------------여기까지  w "내용 쓰기" 
 
-f = open("first.txt", "a", encoding="utf-8") #a로 내용을 추가하겠다.
-f.write("내용 추가\n")  #\n을 사용 - 한 줄 여백을 둔 뒤 내용 추가
-f.close()
+# f = open("first.txt", "a", encoding="utf-8") #a로 내용을 추가하겠다.
+# f.write("내용 추가\n")  #\n을 사용 - 한 줄 여백을 둔 뒤 내용 추가
+# f.close()
 
-#* -----------------------여기까지  a "내용 추가" - ((중복 발생)) 
-#>>파일 내용을 읽은 뒤 삭제할 부분만 빼서 남은 내용을 덮어쓰면 해결 된다고 함
+# #* -----------------------여기까지  a "내용 추가" - ((중복 발생)) 
+#*>>파일 내용을 읽은 뒤 삭제할 부분만 빼서 남은 내용을 덮어쓰면 해결 된다고 함
 
-f = open("first.txt", "r", encoding="utf-8")
-look = f.read() #read를 통해 읽고, 변수에 저장한다.
-print(look) #look라는 변수를 보겠다.
-f.close()
+# f = open("first.txt", "r", encoding="utf-8")
+# look = f.read() #read를 통해 읽고, 변수에 저장한다.
+# print(look) #look라는 변수를 보겠다.
+# f.close()
+# # #* -----------------------여기까지  r 입력 부분 읽기(look)
+
+
+#<모드가 r이 아니면, print를 못 하나?>
+
+f = open("first.txt", "w", encoding="utf-8")
+look = f.read()
+print(look)
+f.close
+# 오류 : io.UnsupportedOperation: not readable
+# io : 입출력 / 입출력 중에 할 수 없는 일. 읽기가 안 되는 상태
