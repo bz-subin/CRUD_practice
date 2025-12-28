@@ -45,33 +45,13 @@ f.close()
 
 # w로 사용해야 덮어쓰기가 됨. r+는 쓴 만큼만 사라짐 insert와 같음.
 f = open("first.txt", "w+", encoding="utf-8")  # w+(쓰고 읽기_덮어쓰기)
-#덮어쓰기라 사라진거구나. 
-f.write("가나다")
-abc = f.read()
-print(abc)
-# print(look)
+re_file = f.readlines() # 한 줄씩 배열에 담고, re_file에 저장.
+#배열에 있는 내용을 한 줄씩 담고, 담은 내용이 뺄것과 같다면~한다.
 
-
-# lines = f.readlines() # 한 줄 씩 읽은걸(가져온걸) / lines에 넣겠다.
-# keep_line = []  #유지할 부분만 고르겠다.
-
-# #* 여러줄을 검사해야하기 때문에 반복(for) 사용.
-
-# #writelines 사용하기 위해 r+로 수정
-# liness = f.writelines(lines)
-
-# # liness의 "내용추가"라는 부분을 공백으로 바꾼 뒤 look에 넣음.
-# look = liness.replace("내용추가","") #일정 부분만 걸러주는 함수(찾을거, 바꿀거)
-
-# print(look)  #어떻게 나오는지 출력
-
-# for passed_line in look[]  # lines가 빌 때 까지 반복.
-# # lines를 한 줄 씩 passed_line(전달)에 옮기는데, 다 넘겨서 lines가 비게 된다면 반복 중지
-#     if passed_line != "내용추가"
-#     #만약에, passed_line에 "삭제할 부분"이 없다면 keep_line에 추가한다.
-#         print(look)
-
-
-
-# close()
-#IndentationError: unexpected indent : 들여쓰기 오류
+keep_line = []
+for passed_line in re_file :  #2-1 대조를 위한 for (배열을 한씩 passed_line에 담기.)
+    re_file[0].replace("내용추가","")  #re_file배열 첫번째 내용을 "내용추가"->공백으로 수정
+    print(passed_line)  # 한줄씩 출력.
+    if passed_line != "내용추가" : # 뺄 문자가 포함되지 않은 줄이라면
+        keep_line = passed_line #keep_line에 넣는다.
+        print(keep_line)
