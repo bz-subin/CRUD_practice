@@ -45,11 +45,11 @@ f.close()
 
 # w로 사용해야 덮어쓰기가 됨. r+는 쓴 만큼만 사라짐 insert와 같음.
 f = open("first.txt", "w+", encoding="utf-8")  # w+(쓰고 읽기_덮어쓰기)
-
-line = f.readlines()
-lines=len(line)
-print(lines)
-
+#덮어쓰기라 사라진거구나. 
+f.write("가나다")
+abc = f.read()
+print(abc)
+# print(look)
 
 
 # lines = f.readlines() # 한 줄 씩 읽은걸(가져온걸) / lines에 넣겠다.
