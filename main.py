@@ -36,20 +36,22 @@
 #삭제할 부분만 빼기
 
 f = open("first.txt", "r", encoding="utf-8")
-r_one_line = f.readlines() # 한 줄 씩 읽은걸(가져온걸) / r_one_line(한줄씩 읽는)에 넣겠다.
+lines = f.readlines() # 한 줄 씩 읽은걸(가져온걸) / lines에 넣겠다.
 
 keep_line = []  #유지할 부분만 고르겠다.
 
 # 여러줄을 검사해야하기 때문에 반복(for) 사용.
 
-look = r_one_line.replace("내용추가","") #일정 부분만 걸러주는 함수(찾을거, 바꿀거)
-print(look)
-close()
+look[] = lines.replace("내용추가","") #일정 부분만 걸러주는 함수(찾을거, 바꿀거)
+# 라인스에 내용추가라는 부분을 공백으로 바꾼 뒤 look에 넣음.
+#lines가 배열이니까 replace에서 오류 생길수도, look[]로 시험해보기.
 
-# 오류 : AttributeError: 'list' object has no attribute 'replace'
-# replace는 문자열 전용이기 때문에 list에서는 쓸 수 없다.
-
-# for passed_line in r_one_line  # passed_line(전달 라인)에 r_one_line가 있다면 반복.
-# # r_one_line를 한 줄 씩 passed_line에 옮기는데, 다 넘겨서 r_one_line가 비게 된다면 반복 중지
-#     if passed_line != 내용추가
+# for passed_line in look[]  # lines가 빌 때 까지 반복.
+# # lines를 한 줄 씩 passed_line(전달)에 옮기는데, 다 넘겨서 lines가 비게 된다면 반복 중지
+#     if passed_line != "내용추가"
 #     #만약에, passed_line에 "삭제할 부분"이 없다면 keep_line에 추가한다.
+#         print(look)
+
+
+
+    close()
