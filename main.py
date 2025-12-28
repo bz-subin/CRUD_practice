@@ -18,10 +18,10 @@ f.close()
 
 #* -----------------------여기까지  a "내용 추가" - ((중복 발생)) 
 
-f = open("first.txt", "r", encoding="utf-8")
-look = f.read() #읽은걸 변수에 저장
-print(look) #변수 출력(터미널에 보이게)
-f.close()
+# f = open("first.txt", "r", encoding="utf-8")
+# look = f.read() #읽은걸 변수에 저장
+# print(look) #변수 출력(터미널에 보이게)
+# f.close()
 
 # # #* -----------------------여기까지  r 입력 부분 읽기(look)
 # 모드가 r이 아니면, print를 못 하나?>
@@ -35,23 +35,21 @@ f.close()
 # # io : 입출력 / 입출력 중에 할 수 없는 일. 읽기가 안 되는 상태
 
 # # #* -----------------------여기까지  w(x)
-#AttributeError: 'list' object has no attribute 'replace' 오류
-#replace는 문자열에서만 쓸 수 있음(배열 X) / 배열[1] -> 특정 배열 지정 시엔 사용 가능 
+# AttributeError: 'list' object has no attribute 'replace' 오류
+# replace는 문자열에서만 쓸 수 있음(배열 X) / 배열[1] -> 특정 배열 지정 시엔 사용 가능 
+#* ㄴ> replace는 복사본을 만들어서 수정하기 때문에 원본에 덮어씌우거나 새 변수에 넣는 작업 필수
 
 f = open("first.txt", "r", encoding="utf-8")  # w+(쓰고 읽기_덮어쓰기)
-
 re_file = f.readlines() # 한 줄씩 re_file1에 저장. (커서: 첫번째줄 끝)
-
 
 for a in range(2) :
     if "내용 추가" in re_file[a] : #re_file 안에 "내용추가"라는 문자가 있는가
-        re_file[a].replace("내용 추가","")
-        end = print(re_file[a]) #있다면 출력하고 end에 담아라
-
+        rere_file = re_file[a].replace("내용 추가","")
+        end = print(rere_file) #있다면 출력하고 end에 담아라
+# rere_file에 덮어쓰기 되어서 두 줄이 온전하게 남아있지 않는 문제 발생
     else :
         print("X")
         
-
 
 f.close()
 
