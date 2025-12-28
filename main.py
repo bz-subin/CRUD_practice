@@ -18,10 +18,10 @@ f.close()
 
 #* -----------------------여기까지  a "내용 추가" - ((중복 발생)) 
 
-# f = open("first.txt", "r", encoding="utf-8")
-# look = f.read() #읽은걸 변수에 저장
-# print(look) #변수 출력(터미널에 보이게)
-# f.close()
+f = open("first.txt", "r", encoding="utf-8")
+look = f.read() #읽은걸 변수에 저장
+print(look) #변수 출력(터미널에 보이게)
+f.close()
 
 # # #* -----------------------여기까지  r 입력 부분 읽기(look)
 # 모드가 r이 아니면, print를 못 하나?>
@@ -35,11 +35,23 @@ f.close()
 # # io : 입출력 / 입출력 중에 할 수 없는 일. 읽기가 안 되는 상태
 
 # # #* -----------------------여기까지  w(x)
+#AttributeError: 'list' object has no attribute 'replace' 오류
+#replace는 문자열에서만 쓸 수 있음(배열 X)
 
 f = open("first.txt", "r", encoding="utf-8")  # w+(쓰고 읽기_덮어쓰기)
-re_file = f.readlines() # 한 줄씩 배열에 담고, re_file에 저장. (커서는 두번째줄 끝으로 이동)
-re_file[0].replace("내용 추가","")
-print(re_file[0]) 
+
+re_file = f.readlines() # 한 줄씩 re_file1에 저장. (커서: 첫번째줄 끝)
+
+
+for a in range(2) :
+    if re_file[a] == "내용 추가" :
+        re_file[a].replace
+        end = print(re_file)
+
+    else :
+        print("X")
+        
+
 
 f.close()
 
