@@ -47,11 +47,15 @@ f.close()
 f = open("first.txt", "w+", encoding="utf-8")  # w+(쓰고 읽기_덮어쓰기)
 re_file = f.readlines() # 한 줄씩 배열에 담고, re_file에 저장.
 #배열에 있는 내용을 한 줄씩 담고, 담은 내용이 뺄것과 같다면~한다.
+ref = re_file[0]
+re.replace("내용추가","")  #re_file배열 첫번째 내용을 "내용추가"->공백으로 수정
 
-keep_line = []
-for passed_line in re_file :  #2-1 대조를 위한 for (배열을 한씩 passed_line에 담기.)
-    re_file[0].replace("내용추가","")  #re_file배열 첫번째 내용을 "내용추가"->공백으로 수정
-    print(passed_line)  # 한줄씩 출력.
-    if passed_line != "내용추가" : # 뺄 문자가 포함되지 않은 줄이라면
-        keep_line = passed_line #keep_line에 넣는다.
-        print(keep_line)
+# keep_line = []
+# for passed_line in re_file :  #2-1 대조를 위한 for (배열을 한씩 passed_line에 담기.)
+#     print(passed_line)  # 한줄씩 출력.
+#     if passed_line != "내용추가" : # 뺄 문자가 포함되지 않은 줄이라면
+#         keep_line = passed_line #keep_line에 넣는다.
+print(ref)
+
+
+#*----> 그냥 간단하게 re_file[0]을 replace 하면 되는거 아닐까.
