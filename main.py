@@ -36,7 +36,7 @@ f.close()
 
 # # #* -----------------------여기까지  w(x)
 #AttributeError: 'list' object has no attribute 'replace' 오류
-#replace는 문자열에서만 쓸 수 있음(배열 X)
+#replace는 문자열에서만 쓸 수 있음(배열 X) / 배열[1] -> 특정 배열 지정 시엔 사용 가능 
 
 f = open("first.txt", "r", encoding="utf-8")  # w+(쓰고 읽기_덮어쓰기)
 
@@ -44,9 +44,9 @@ re_file = f.readlines() # 한 줄씩 re_file1에 저장. (커서: 첫번째줄 �
 
 
 for a in range(2) :
-    if re_file[a] == "내용 추가" :
-        re_file[a].replace
-        end = print(re_file)
+    if "내용 추가" in re_file[a] : #re_file 안에 "내용추가"라는 문자가 있는가
+        re_file[a].replace("내용 추가","")
+        end = print(re_file[a]) #있다면 출력하고 end에 담아라
 
     else :
         print("X")
